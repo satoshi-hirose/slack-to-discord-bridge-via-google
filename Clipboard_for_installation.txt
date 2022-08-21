@@ -1,0 +1,39 @@
+- DISCORD_WEBHOOK_LIST (don't forget to remove the comma at the end of the bottom line)
+
+{"Webhook":[
+{ "name": "general", "url": “https://discord.com/api/webhooks/..."},
+{ "name": "random", "url": “https://discord.com/api/webhooks/..."},
+.
+.
+.
+{ "name": "XXXX", "url": “https://discord.com/api/webhooks/..."}
+]}
+
+
+- GOOGLE_DRIVE_JSON_DIRECTORY_ID 
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+- GOOGLE_DRIVE_FILE_DIRECTORY_ID 
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+- SPREADSHEET_ID
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+- SHEET_NAME
+
+XXXX
+
+- GOOGLE web app url
+
+https://script.google.com/macros/s/XXXXXXXXXXXXXXXXXXXXXX/exec
+
+- VERIFICATION_TOKEN
+
+XXXXXXXXXXXXXXXXXX
+
+- SLACK_ACCESS_TOKEN
+
+xoxb-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
