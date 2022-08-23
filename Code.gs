@@ -114,31 +114,39 @@ function sendMsgToDiscord(json) {
 // ----- Subfunctions ----
 // -----------------------
 function getUserName(userId){
-  const token     = PropertiesService.getScriptProperties().getProperty('SLACK_ACCESS_TOKEN');  
-  const options   = {"headers": { 'Authorization': 'Bearer ' + token }};
-  const userData  = UrlFetchApp.fetch("https://slack.com/api/users.info?user="+userId,options);
-  const userName  = JSON.parse(userData).user.real_name;
-  return userName ? userName : userId; 
+  try{  
+    const token     = PropertiesService.getScriptProperties().getProperty('SLACK_ACCESS_TOKEN');  
+    const options   = {"headers": { 'Authorization': 'Bearer ' + token }};
+    const userData  = UrlFetchApp.fetch("https://slack.com/api/users.info?user="+userId,options);
+    const userName  = JSON.parse(userData).user.real_name;
+    return userName ? userName : userId; 
+    }catch(error) {return userId}    
 }
 
 function getChannelName(channelId){
-  const token       = PropertiesService.getScriptProperties().getProperty('SLACK_ACCESS_TOKEN');  
-  const options     = {"headers": { 'Authorization': 'Bearer ' + token }};
-  const channelData = UrlFetchApp.fetch("https://slack.com/api/conversations.info?channel="+channelId,options);
-  const channelName = JSON.parse(channelData).channel.name;
-  return channelName ? channelName : channelId;
+  try{  
+    const token       = PropertiesService.getScriptProperties().getProperty('SLACK_ACCESS_TOKEN');  
+    const options     = {"headers": { 'Authorization': 'Bearer ' + token }};
+    const channelData = UrlFetchApp.fetch("https://slack.com/api/conversations.info?channel="+channelId,options);
+    const channelName = JSON.parse(channelData).channel.name;
+    return channelName ? channelName : channelId;
+    }catch(error){return channelId}
 }
 
 function modifyMsgForDiscord(text){
   let newtext = text
   // person & channel mention
   newtext     = newtext.replace(/<@([A-Z0-9]{1,21})>/g,function(all,p){return "@"+getUserName(p)}) 
-  newtext     = newtext.replace(/<#([A-Z0-9]{1,21})>/g,function(all,p){return "#"+getChannelName(p)})
+  newtext     = newtext.replace(/<#([A-Z0-9]{1,21})\|(.{1,15})>/g,"#$2")
   // replace url
   newtext     = newtext.replace(/(<|\|)(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)/g,
                 function(all){return "\n　"+all.slice(1)})
   newtext     = newtext.replace(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&\/=]*)>/g,
                 function(all){return all.slice(0,-1)+"\n"})
+  
+  // unescape HTML Special characters　added on 8/23
+  newtext = newtext.replace(/(&amp;|&lt;|&gt;)/g,function(match){return {'&amp;' : '&',　'&lt;': '<',　'&gt;': '>'}[match]})
+  
   // cut >2000 char
   newtext = newtext.slice(0,2000)
 return newtext
