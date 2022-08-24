@@ -56,7 +56,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-  - Create a sheet you want to save the log.
+  - Create a sheet in the spreadsheet you want to save the log.
   - Copy&Paste the fileID to SHEET_NAME of the clipboard.
 ```  
    SHEET_NAME
