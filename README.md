@@ -1,5 +1,7 @@
 # slack-to-discord-bridge-via-google
 
+See also https://github.com/satoshi-hirose/slack2discord_migration
+
 The comment posted on a Slack channel is forwarded to a corresponding Discord channel.
 The attached files in Slack channel is uploaded to Google Drive and link to the file is put in Discord.
 - real-time Sync
