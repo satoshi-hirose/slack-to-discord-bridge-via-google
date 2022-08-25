@@ -1,3 +1,9 @@
+
+
+https://user-images.githubusercontent.com/11308085/186579998-17c47fcb-ff67-4398-862e-472a6e748f84.mp4
+
+
+
 # slack-to-discord-bridge-via-google
 
 See also https://github.com/satoshi-hirose/slack2discord_migration
