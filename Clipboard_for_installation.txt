@@ -1,12 +1,12 @@
    DISCORD_WEBHOOK_LIST (don't forget to remove the comma at the end of the bottom line)
 
 {"Webhook":[
-{ "name": "general", "url": “https://discord.com/api/webhooks/XXXXXXXXXXXX"},
-{ "name": "random", "url": “https://discord.com/api/webhooks/XXXXXXXXXXXXX"},
+{ "name": "general", "url": "https://discord.com/api/webhooks/XXXXXXXXXXXX"},
+{ "name": "random", "url": "https://discord.com/api/webhooks/XXXXXXXXXXXXX"},
 .
 .
 .
-{ "name": "XXXX", "url": “https://discord.com/api/webhooks/XXXXXXXXXXXXXXX"}
+{ "name": "XXXX", "url": "https://discord.com/api/webhooks/XXXXXXXXXXXXXXX"}
 ]}
 
 
