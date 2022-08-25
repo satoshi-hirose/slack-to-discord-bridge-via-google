@@ -15,7 +15,7 @@ Download Clipboard_for_installation.txt that is used as clipboard during the fol
 Fill in the required information in the clipboard during following below step-by-step instruction.
 
 ### 1. Discord 
- - Create Discord channels with names identical to the channel in Slack.
+ - Create Discord channels with names identical to the channels in Slack.
  - Prepare webhook for each Discord channels (https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
  - Copy&Paste the channel names and webhool urls to DISCORD_WEBHOOK_LIST of the clipboard.
 
